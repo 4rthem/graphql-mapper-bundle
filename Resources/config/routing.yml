@@ -1,0 +1,5 @@
+arthem_graphql_api:
+    defaults:
+        _controller: ArthemGraphQLBundle:Api:query
+    methods: post
+    path: /graphql

@@ -1,0 +1,32 @@
+{
+    "name": "arthem/graphql-mapper-bundle",
+    "description": "The GraphQL Mapper Symfony Bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "homepage": "https://github.com/4rthem/graphql-mapper-bundle",
+    "authors": [
+        {
+            "name": "Arthur de Moulins",
+            "email": "arthurdemoulins@gmail.com"
+        }
+    ],
+    "keywords": [
+        "graphql",
+        "mapping"
+    ],
+    "require": {
+        "php": ">=5.4",
+        "arthem/graphql-mapper": "~0.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arthem\\Bundle\\GraphQLBundle": ""
+        }
+    }
+}
