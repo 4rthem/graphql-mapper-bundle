@@ -27,6 +27,11 @@ class ArthemGraphQLExtension extends Extension
 
         $definition = $container->getDefinition('arthem_graphql.mapping.driver.yaml');
         $definition->addArgument($config['mapping']['files']);
+        $definition->setAbstract(false);
+
+        $definition = $container->getDefinition('arthem_graphql.mapping.cache.file');
+        $definition->addArgument($config['mapping']['cache_file']);
+        $definition->setAbstract(false);
     }
 
     /**

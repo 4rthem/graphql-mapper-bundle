@@ -6,7 +6,7 @@ Symfony bundle for [GraphQL Mapper](https://github.com/4rthem/graphql-mapper)
 
 ## Installation
 
-This is installable via [Composer](https://getcomposer.org/) as [arthem/graphql-mapper](https://packagist.org/packages/arthem/graphql-mapper):
+This is installable via [Composer](https://getcomposer.org/) as [arthem/graphql-mapper-bundle](https://packagist.org/packages/arthem/graphql-mapper-bundle):
 
 ```bash
 composer require arthem/graphql-mapper-bundle

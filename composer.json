@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=5.4",
-        "arthem/graphql-mapper": "~0.4"
+        "arthem/graphql-mapper": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8"
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Arthem\\Bundle\\GraphQLBundle": ""
+            "Arthem\\Bundle\\GraphQLBundle\\": ""
         }
     }
 }

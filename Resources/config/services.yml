@@ -1,7 +1,13 @@
 services:
     arthem_graphql.mapping.driver.yaml:
         public: false
+        abstract: true
         class: Arthem\GraphQLMapper\Mapping\Driver\YamlDriver
+
+    arthem_graphql.mapping.cache.file:
+        public: false
+        abstract: true
+        class: Arthem\GraphQLMapper\Mapping\Cache\FileCacheDriver
 
     arthem_graphql.factory.type_resolver:
         public: false
@@ -27,6 +33,8 @@ services:
         arguments:
             - @arthem_graphql.mapping.driver.yaml
             - @arthem_graphql.factory.type_resolver
+        calls:
+            - [setCacheDriver, [@arthem_graphql.mapping.cache.file]]
 
     arthem_graphql.manager:
         class: Arthem\GraphQLMapper\GraphQLManager
