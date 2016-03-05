@@ -1,5 +1,4 @@
 /bin/
 /phpunit.xml
-composer.lock
-composer.phar
-vendor/
+/composer.lock
+/vendor/

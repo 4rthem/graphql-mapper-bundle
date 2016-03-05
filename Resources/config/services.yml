@@ -4,28 +4,9 @@ services:
         abstract: true
         class: Arthem\GraphQLMapper\Mapping\Driver\YamlDriver
 
-    arthem_graphql.mapping.cache.file:
-        public: false
-        abstract: true
-        class: Arthem\GraphQLMapper\Mapping\Cache\FileCacheDriver
-
     arthem_graphql.factory.type_resolver:
         public: false
         class: Arthem\GraphQLMapper\Schema\TypeResolver
-
-    arthem_graphql.factory.resolver.property:
-        public: false
-        class: Arthem\GraphQLMapper\Schema\Resolve\PropertyResolver
-        tags:
-            - { name: arthem_graphql.resolver_factory }
-
-    arthem_graphql.factory.resolver.doctrine:
-        public: false
-        class: Arthem\GraphQLMapper\Schema\Resolve\DoctrineResolver
-        arguments:
-            - @doctrine.orm.entity_manager
-        tags:
-            - { name: arthem_graphql.resolver_factory }
 
     arthem_graphql.schema_factory:
         public: false
@@ -33,6 +14,7 @@ services:
         arguments:
             - @arthem_graphql.mapping.driver.yaml
             - @arthem_graphql.factory.type_resolver
+            - @arthem_graphql.mapping.guesser
         calls:
             - [setCacheDriver, [@arthem_graphql.mapping.cache.file]]
 

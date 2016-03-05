@@ -1,0 +1,27 @@
+services:
+
+    arthem_graphql.factory.resolver.doctrine:
+        public: false
+        class: Arthem\GraphQLMapper\Schema\Resolve\DoctrineResolver
+        arguments:
+            - @doctrine.orm.entity_manager
+        tags:
+            - { name: arthem_graphql.resolver_factory }
+
+    arthem_graphql.factory.resolver.property:
+        public: false
+        class: Arthem\GraphQLMapper\Schema\Resolve\PropertyResolver
+        tags:
+            - { name: arthem_graphql.resolver_factory }
+
+    arthem_graphql.factory.resolver.callable:
+        public: false
+        class: Arthem\GraphQLMapper\Schema\Resolve\CallableResolver
+        tags:
+            - { name: arthem_graphql.resolver_factory }
+
+    arthem_graphql.factory.resolver.callable:
+        public: false
+        class: Arthem\GraphQLMapper\Schema\Resolve\CallableResolver
+        tags:
+            - { name: arthem_graphql.resolver_factory }

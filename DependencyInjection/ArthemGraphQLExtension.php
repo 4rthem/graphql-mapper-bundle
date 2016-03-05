@@ -24,13 +24,28 @@ class ArthemGraphQLExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
+        $loader->load('cache.yml');
+        $loader->load('guess.yml');
+        $loader->load('resolver.yml');
 
         $definition = $container->getDefinition('arthem_graphql.mapping.driver.yaml');
         $definition->addArgument($config['mapping']['files']);
         $definition->setAbstract(false);
 
+        if ($config['mapping']['cache']['enabled']) {
+            $this->loadCache($container, $config['mapping']['cache']);
+        }
+    }
+
+    /**
+     * @param ContainerBuilder $container
+     * @param array            $config
+     */
+    private function loadCache(ContainerBuilder $container, array $config)
+    {
         $definition = $container->getDefinition('arthem_graphql.mapping.cache.file');
-        $definition->addArgument($config['mapping']['cache_file']);
+        $definition->addArgument($config['file']);
+        $definition->addArgument(!$container->getParameter('kernel.debug'));
         $definition->setAbstract(false);
     }
 

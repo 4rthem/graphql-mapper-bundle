@@ -1,0 +1,5 @@
+services:
+    arthem_graphql.mapping.cache.file:
+        public: false
+        abstract: true
+        class: Arthem\GraphQLMapper\Mapping\Cache\FileCacheDriver

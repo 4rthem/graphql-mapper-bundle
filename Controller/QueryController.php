@@ -6,14 +6,18 @@ use Arthem\GraphQLMapper\Exception\QueryException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-class ApiController extends Controller
+class QueryController extends Controller
 {
     public function queryAction(Request $request)
     {
         $manager = $this->get('arthem_graphql.manager');
 
-        $query = $request->request->get('query');
+        $query = $request->get('query');
+        if (empty($query)) {
+            throw new BadRequestHttpException('Empty query');
+        }
 
         try {
             $data = $manager->query($query);
