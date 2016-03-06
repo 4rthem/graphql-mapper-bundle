@@ -64,12 +64,12 @@ Setup routing:
 # app/config/routing.yml
 arthem_graphql:
     resource: "@ArthemGraphQLBundle/Resources/config/routing.yml"
-    prefix:   /api
+    prefix:   /graphql
 ```
 
 ## Usage
 
-Just call `POST /app_dev.php/api/graphql` with a "query" parameter
+Just call `POST /app_dev.php/graphql/query` with a "query" in the body
 
 ## License
 
