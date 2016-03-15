@@ -1,16 +1,21 @@
 services:
     arthem_graphql.mapping.guesser:
-        class: Arthem\GraphQLMapper\Mapping\Guess\MappingGuesserManager
+        class: Arthem\GraphQLMapper\Mapping\Guesser\MappingGuesserManager
 
 
     arthem_graphql.mapping.guesser.doctrine:
-        class: Arthem\GraphQLMapper\Mapping\Guess\DoctrineGuesser
+        class: Arthem\GraphQLMapper\Mapping\Guesser\DoctrineGuesser
         arguments:
             - @doctrine.orm.entity_manager
         tags:
             - { name: arthem_graphql.mapping_guesser }
 
     arthem_graphql.mapping.guesser.property:
-        class: Arthem\GraphQLMapper\Mapping\Guess\PropertyGuesser
+        class: Arthem\GraphQLMapper\Mapping\Guesser\PropertyGuesser
+        tags:
+            - { name: arthem_graphql.mapping_guesser }
+
+    arthem_graphql.mapping.guesser.callable:
+        class: Arthem\GraphQLMapper\Mapping\Guesser\CallableGuesser
         tags:
             - { name: arthem_graphql.mapping_guesser }
