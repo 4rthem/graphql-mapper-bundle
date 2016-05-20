@@ -12,13 +12,13 @@ services:
         public: false
         class: Arthem\GraphQLMapper\Schema\SchemaFactory
         arguments:
-            - @arthem_graphql.mapping.driver.yaml
-            - @arthem_graphql.factory.type_resolver
-            - @arthem_graphql.mapping.guesser
+            - "@arthem_graphql.mapping.driver.yaml"
+            - "@arthem_graphql.factory.type_resolver"
+            - "@arthem_graphql.mapping.guesser"
         calls:
-            - [setCacheDriver, [@arthem_graphql.mapping.cache.file]]
+            - [setCacheDriver, ["@arthem_graphql.mapping.cache.file"]]
 
     arthem_graphql.manager:
         class: Arthem\GraphQLMapper\GraphQLManager
         arguments:
-            - @arthem_graphql.schema_factory
+            - "@arthem_graphql.schema_factory"

@@ -4,7 +4,7 @@ services:
         public: false
         class: Arthem\GraphQLMapper\Schema\Resolve\DoctrineResolver
         arguments:
-            - @doctrine.orm.entity_manager
+            - "@doctrine.orm.entity_manager"
         tags:
             - { name: arthem_graphql.resolver_factory }
 

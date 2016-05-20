@@ -6,7 +6,7 @@ services:
     arthem_graphql.mapping.guesser.doctrine:
         class: Arthem\GraphQLMapper\Mapping\Guesser\DoctrineGuesser
         arguments:
-            - @doctrine.orm.entity_manager
+            - "@doctrine.orm.entity_manager"
         tags:
             - { name: arthem_graphql.mapping_guesser }
 
