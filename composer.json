@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=5.4",
-        "arthem/graphql-mapper": "^0.0.1"
+        "arthem/graphql-mapper": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8"

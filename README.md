@@ -1,7 +1,5 @@
 # GraphQL Mapper Bundle
 
-### Work in progress.
-
 Symfony bundle for [GraphQL Mapper](https://github.com/4rthem/graphql-mapper)
 
 ## Installation
